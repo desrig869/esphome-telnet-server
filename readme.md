@@ -1,4 +1,4 @@
-# ESPHome Telnet-Server component
+ ESPHome Telnet-Server component
 
 Custom component for ESPHome that implements a Telnet server, a wireless Serial bridge.
 
@@ -16,7 +16,7 @@ Add the following lines to your config.
 
 ```yaml
 external_components:
-  - source: github://RoboMagus/esphome-telnet-server
+  - source: github://desrig869/esphome-telnet-server
 
 telnet_server:
   port: 23
