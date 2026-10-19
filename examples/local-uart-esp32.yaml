@@ -1,0 +1,31 @@
+substitutions:
+  friendly_name: Telnet Server
+
+esphome:
+  name: telnet-example
+
+esp32:
+  board: wemos_d1_mini32
+  
+external_components:
+  - source: github://RoboMagus/esphome-telnet-server
+   
+logger:
+  level: VERBOSE # this will also show lines received on Serial in Log output
+
+# See 
+# https://esphome.io/components/logger.html#default-uart-gpio-pins
+# for a breakdown of which microcontrollers use which pins
+uart:
+  id: uart_0
+  baud_rate: 115200
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+
+telnet_server:
+  uart_id: uart_0
+  port: 25 # default is 23
+  client_count:
+    name: "${friendly_name} client count"
+  client_ips:
+    name: "${friendly_name} client IPs"
